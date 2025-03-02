@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input"
 import { useAuth } from "@/context/auth-context"
 import { Loader2 } from "lucide-react"
 import { useSearchParams } from "next/navigation"
+import { useRouter } from "next/router"
 
 const formSchema = z
   .object({
@@ -27,9 +28,15 @@ export function ResetPasswordForm() {
   const { resetPassword, isLoading } = useAuth()
   const [error, setError] = useState<string | null>(null)
   const [success, setSuccess] = useState(false)
-  // const searchParams = useSearchParams()
-  // const token = searchParams.get("token") || "default-value"
+  const router = useRouter()
+  const [token, setToken] = useState<string | null>(null)
   
+  useEffect(() => {
+    if (router.isReady) {
+      const tokenFromQuery = router.query.token as string
+      setToken(tokenFromQuery || "default-value")
+    }
+  }, [router.isReady, router.query.token])
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -42,8 +49,12 @@ export function ResetPasswordForm() {
   const onSubmit = async (values: FormValues) => {
     try {
       setError(null)
-      await resetPassword(token, values.password)
-      setSuccess(true)
+      if (token) {
+        await resetPassword(values.password, token)
+        setSuccess(true)
+      } else {
+        setError("Token is missing oor invalid.")
+      }
     } catch (err) {
       setError("Failed to reset password. The token may be invalid or expired.")
     }
