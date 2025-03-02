@@ -38,3 +38,12 @@
   - TypeScript: Chosen for its ability to catch errors at compile-time and provide a better development experience.
   - Next.js: Selected for its performance optimizations and ease of creating both static and server-rendered pages.
   - Tailwind CSS: Used for its flexibility and ease of creating responsive designs without writing custom CSS.
+
+## Login Infomation
+   - Member Dashboard
+     email: johndoe@example.com
+     password: Johndoejohn
+
+   - Admin Dashboard
+     email: admin@example.com
+     password: Adminpassword
