@@ -1,5 +1,4 @@
 "use client"
-
 import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -29,7 +28,8 @@ export function ResetPasswordForm() {
   const [error, setError] = useState<string | null>(null)
   const [success, setSuccess] = useState(false)
   const searchParams = useSearchParams()
-  const token = searchParams.get("token") || ""
+  const token = searchParams.get("token") || "default-value"
+  
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
