@@ -14,7 +14,7 @@ export function MemberDashboard() {
   const { user } = useAuth()
 
   if (!user) {
-    return <div>Loading...</div>
+    return <div>Loading........</div>
   }
 
   return (

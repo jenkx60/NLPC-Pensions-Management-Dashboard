@@ -6,6 +6,7 @@ import { useAuth } from "@/context/auth-context"
 import { redirect } from "next/navigation"
 import { DashboardLayout } from "@/components/layouts/dashboard-layout"
 import { useEffect } from "react"
+import { PropagateLoader } from "react-spinners"
 
 export default function DashboardLayoutWrapper({
   children,
@@ -21,7 +22,11 @@ export default function DashboardLayoutWrapper({
   }, [user, isLoading])
 
   if (isLoading) {
-    return <div>Loading...</div>
+    return (
+        <div className="flex items-center justify-center h-screen">
+          <PropagateLoader size={50} color={"#3B82F6"} loading={isLoading} />
+        </div>
+    )
   }
 
   if (!user) {
