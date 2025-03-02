@@ -6,7 +6,7 @@ export function AuthLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen flex items-center justify-center bg-muted p-4">
       <div className="w-full max-w-md">
-        <div className="flex justify-center mb-6">
+        {/* <div className="flex justify-center mb-6">
           <Image
             src="/placeholder.svg?height=80&width=240"
             alt="Pension Management System"
@@ -14,7 +14,7 @@ export function AuthLayout({ children }: { children: React.ReactNode }) {
             height={80}
             className="h-20 w-auto"
           />
-        </div>
+        </div> */}
         <Card>
           <CardHeader className="space-y-1">
             <CardTitle className="text-2xl font-bold text-center">Pension Management System</CardTitle>

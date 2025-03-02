@@ -24,10 +24,10 @@ export function AdminDashboardLayout({ children }: { children: React.ReactNode }
 
   const navigation = [
     { name: "Dashboard", href: "/admin", icon: Home },
-    { name: "Members", href: "/admin/members", icon: Users },
-    { name: "Contributions", href: "/admin/contributions", icon: BarChart3 },
-    { name: "Reports", href: "/admin/reports", icon: FileText },
-    { name: "Profile", href: "/admin/profile", icon: User },
+    // { name: "Members", href: "/admin/members", icon: Users },
+    // { name: "Contributions", href: "/admin/contributions", icon: BarChart3 },
+    // { name: "Reports", href: "/admin/reports", icon: FileText },
+    // { name: "Profile", href: "/admin/profile", icon: User },
   ]
 
   return (

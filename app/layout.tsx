@@ -12,7 +12,7 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Pension Management System",
   description: "Manage your pension contributions and benefits",
-    generator: 'v0.dev'
+    generator: 'Jenkins Uwagbai'
 }
 
 export default function RootLayout({
