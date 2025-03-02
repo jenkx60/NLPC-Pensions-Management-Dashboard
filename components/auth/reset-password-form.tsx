@@ -27,8 +27,8 @@ export function ResetPasswordForm() {
   const { resetPassword, isLoading } = useAuth()
   const [error, setError] = useState<string | null>(null)
   const [success, setSuccess] = useState(false)
-  const searchParams = useSearchParams()
-  const token = searchParams.get("token") || "default-value"
+  // const searchParams = useSearchParams()
+  // const token = searchParams.get("token") || "default-value"
   
 
   const form = useForm<FormValues>({
